@@ -4,6 +4,7 @@ on: push
 
 jobs:
   test:
+    name: Unit tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -11,5 +12,5 @@ jobs:
         with:
           java-version: '22'
           distribution: 'temurin'
-      - run: ./mvnw test
+      - run: mvn --batch-mode test
         name: Execute maven test
